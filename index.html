@@ -74,9 +74,28 @@ button:disabled{opacity:.55;cursor:not-allowed}
 <div class="card"><h3>Memoria</h3><p>Cómo aprende el cerebro.</p><button class="btn gold" onclick="showMemoria()">Ver más</button></div>
 <div class="card"><h3>Psicología</h3><p>Conducta, procesos mentales, sesgos y autoconocimiento.</p><button class="btn gold" onclick="showPsicologia()">Ver más</button></div></div></div></section>
 <section id="recursos"><div class="wrap"><h2 style="font:42px Georgia,serif;text-align:center">Recursos destacados</h2><div class="products">
-<div class="product"><div class="cover">Guía Completa de Neurociencia Aplicada, Neuroplasticidad y Aprendizaje</div><p>Material digital educativo</p><div class="price">$2.000 ARS</div><button class="btn gold" onclick="showPay('Guía Completa de Neurociencia Aplicada, Neuroplasticidad y Aprendizaje','$2.000 ARS')">Comprar</button></div>
-<div class="product"><div class="cover">Guía: La Memoria</div><p>PDF educativo</p><div class="price">$2.000 ARS</div><button class="btn" type="button" disabled>Próximamente</button></div>
-<div class="product"><div class="cover">Pack Neuro + Psico</div><p>Colección digital</p><div class="price">$2.000 ARS</div><button class="btn" type="button" disabled>Próximamente</button></div>
+
+<div class="product">
+<div class="cover">Guía Completa de Neurociencia Aplicada, Neuroplasticidad y Aprendizaje</div>
+<p>Material digital educativo</p>
+<div class="price">$3.000 ARS</div>
+<button class="btn gold" onclick="showPay('guia-neurociencia','Guía Completa de Neurociencia Aplicada, Neuroplasticidad y Aprendizaje','$3.000 ARS')">Comprar</button>
+</div>
+
+<div class="product">
+<div class="cover">Guía: La Memoria</div>
+<p>PDF educativo</p>
+<div class="price">$3.000 ARS</div>
+<button class="btn gold" onclick="showPay('guia-memoria','Guía de Memoria','$3.000 ARS')">Comprar</button>
+</div>
+
+<div class="product">
+<div class="cover">Pack Neuro + Psico</div>
+<p>Colección digital</p>
+<div class="price">$3.000 ARS</div>
+<button class="btn" type="button" disabled>Próximamente</button>
+</div>
+
 </div></div></section>
 <section id="contacto"><div class="wrap split">
 <div class="panel"><h2 style="font:34px Georgia,serif">¿Tenés una pregunta?</h2><p>Escribinos directamente.</p><a class="btn gold" href="mailto:neerosoto@gmail.com?subject=Consulta%20-%20Ana%20Elizondo" target="_blank">Enviar consulta</a></div>
@@ -169,7 +188,7 @@ button:disabled{opacity:.55;cursor:not-allowed}
 <div aria-labelledby="payModalTitle" aria-modal="true" class="modal" id="payModal" role="dialog"><div class="modal-box"><button aria-label="Cerrar" class="close" onclick="closePay()">×</button><h3 id="payModalTitle">Comprar material</h3><p id="payModalProduct" style="color:var(--silver)"></p><p class="pay-note">Serás enviado a Mercado Pago para completar el pago de forma segura.</p><div class="pay-row"><span>Vendedor</span><code>Lucas Emanuel Luna Atienza</code></div><div class="pay-row"><span>Alias</span><code>lucasmp2018</code></div><button class="btn gold" id="mercadoPagoButton" type="button" onclick="startCheckout()">Pagar con Mercado Pago</button><p class="pay-note" id="payStatus">El archivo se habilita únicamente después de que Mercado Pago confirme el pago.</p></div></div>
 <template id="memoriaText"><p>Yo antes pensaba que tener buena memoria era simplemente acordarte de muchas cosas. Pero cuando empecé a estudiar cómo funciona el cerebro, entendí que es bastante más delirante que eso. La memoria no es una cámara que graba todo lo que vivimos. El cerebro selecciona, organiza, relaciona y reconstruye información. Por eso podemos olvidar algo que nos pasó ayer y, en cambio, acordarnos perfectamente de una boludez de hace cinco años. Y algo clave para recordar mejor, no alcanza con leer algo veinte veces. El cerebro aprende mucho mejor cuando tiene que recuperar activamente la información, relacionarla con conocimientos previos y volver a encontrarla después. Por eso estudiar cómo funciona la memoria no es solamente interesante: te puede servir literalmente para estudiar mejor, aprender más rápido y dejar de depender de repetir las cosas hasta el cansancio. Y si querés llevar esto al siguiente nivel, abajo te dejo mi guía paga, donde te enseño cómo funcionan los palacios mentales, técnicas de asociación y cómo entrenar tu memoria para empezar a usarla realmente a tu voluntad.</p></template><template id="psicologiaText"><p>Hay algo de la psicología que a mí particularmente me obsesiona: la parte de nosotros que no mostramos.</p><p>Porque todos tenemos una versión que enseñamos y otra que solamente aparece cuando nadie está mirando.</p><p>Y no, no hablo de “personalidades secretas” ni de esas frases de internet que parecen profundas. Hablo de algo mucho más interesante: mecanismos, patrones, impulsos, inseguridades, sesgos y formas de interpretar la realidad que muchas veces ni siquiera reconocemos en nosotros mismos.</p><p>Durante mucho tiempo me interesó observar a las personas. Cómo hablan, cómo cambian su comportamiento dependiendo de quién tienen enfrente, qué cosas repiten, qué intentan ocultar, qué les molesta, qué buscan demostrar y, sobre todo, qué hacen cuando creen que nadie está prestando atención.</p><p>Y probablemente muchas de las personas que me ven no tienen idea de cuánto las observo.</p><p>No porque esté intentando juzgarlas, sino porque para mí la conducta humana siempre fue algo fascinante.</p><p>Una conversación, una reacción, una forma de evitar un tema, una contradicción, una necesidad de aprobación o incluso una manera de relacionarse pueden decir muchísimo más de una persona de lo que parece.</p><p>Pero hay algo todavía más interesante: observar no alcanza.</p><p>Porque puedo mirar una conducta y equivocarme completamente sobre su significado.</p><p>Y ahí fue cuando empecé a interesarme cada vez más por estudiar psicología.</p><p>Porque la psicología me dio algo que simplemente observar personas no podía darme: conceptos para organizar lo que estaba viendo, teorías para cuestionar mis propias interpretaciones y evidencia para diferenciar una intuición de una explicación realmente fundamentada.</p><p>Y cuanto más estudio, más me doy cuenta de que la mente humana puede ser bastante contradictoria.</p><p>Podemos querer algo y sabotearnos cuando lo conseguimos.</p><p>Podemos defender una idea no porque sea cierta, sino porque forma parte de nuestra identidad.</p><p>Podemos recordar una situación con absoluta seguridad y aun así estar equivocados en algunos detalles.</p><p>Podemos justificar decisiones después de haberlas tomado y convencernos de que fueron completamente racionales.</p><p>Podemos interpretar las acciones de otra persona de acuerdo con nuestros propios miedos y después creer que estamos viendo la realidad objetivamente.</p><p>Y esta es, para mí, una de las partes más oscuras de la psicología: no siempre tenemos acceso transparente a las razones de nuestra propia conducta.</p><p>A veces creemos conocernos muchísimo y, sin embargo, solamente conocemos la historia que nos contamos sobre nosotros mismos.</p><p>Por eso aprender psicología no debería servir para convertirte en alguien que diagnostica a todo el mundo.</p><p>Debería servir para algo bastante más incómodo:</p><p>aprender a sospechar también de tu propia mente.</p><p>Porque es muy fácil estudiar psicología para encontrar explicaciones sobre los demás.</p><p>“Hace esto porque tiene inseguridad.”</p><p>“Se comporta así porque tiene tal apego.”</p><p>“Me trata así porque tiene miedo.”</p><p>Pero es muchísimo más difícil utilizar esos conocimientos para observar nuestros propios patrones.</p><p>Ahí es donde realmente empieza el autoconocimiento.</p><p>Y justamente por eso quise hacer esta guía.</p><p>Porque todo esto que fui aprendiendo no quería dejarlo solamente en apuntes, libros o cosas que leo por curiosidad. Quería transformarlo en algo que pudiera compartir de una manera que se entienda, pero sin sacrificar la parte interesante de la psicología.</p><p>En esta parte gratuita te dejo una introducción para que entiendas la lógica.</p><p>Pero abajo dejé la guía completa, donde me meto muchísimo más en la psicología de la conducta, sesgos cognitivos, mecanismos de defensa, manipulación, influencia social, autoestima, apego, percepción, personalidad, emociones y otros conceptos que te permiten mirar determinadas situaciones desde una perspectiva completamente diferente.</p><p>No la hice para darte un listado de “trucos psicológicos” para controlar personas.</p><p>La hice para que empieces a entender algo mucho más interesante:</p><p>cómo funciona la mente que tenés enfrente y cómo funciona la que llevás adentro.</p><p>Y probablemente esa segunda sea bastante más difícil de entender.</p></template>
 <script>
-let currentCheckoutToken=null;
+
 
 function showInfo(t,x){document.getElementById('modalTitle').textContent=t;document.getElementById('modalText').innerHTML='<p>'+x+'</p>';document.querySelector('#infoModal .modal-box').scrollTop=0;document.getElementById('infoModal').classList.add('open')}
 function showDopamina(){document.getElementById('modalTitle').textContent='Dopamina';document.getElementById('modalText').innerHTML=document.getElementById('dopaminaText').innerHTML;document.querySelector('#infoModal .modal-box').scrollTop=0;document.getElementById('infoModal').classList.add('open')}
@@ -177,7 +196,11 @@ function showMemoria(){document.getElementById('modalTitle').textContent='Memori
 function showPsicologia(){document.getElementById('modalTitle').textContent='Psicología';document.getElementById('modalText').innerHTML=document.getElementById('psicologiaText').innerHTML;document.querySelector('#infoModal .modal-box').scrollTop=0;document.getElementById('infoModal').classList.add('open')}
 function closeInfo(){document.getElementById('infoModal').classList.remove('open')}
 
-function showPay(n,p){
+let currentProduct=null;
+let currentCheckoutToken=null;
+
+function showPay(productKey,n,p){
+  currentProduct=productKey;
   document.getElementById('payModalProduct').textContent=n+' — '+p;
   document.getElementById('payStatus').textContent='El archivo se habilita únicamente después de que Mercado Pago confirme el pago.';
   document.getElementById('mercadoPagoButton').disabled=false;
@@ -191,7 +214,7 @@ async function startCheckout(){
   button.disabled=true;
   status.textContent='Creando tu compra segura…';
   try{
-    const r=await fetch('/api/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:'guia-neurociencia'})});
+    const r=await fetch('/api/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({product:currentProduct})});
     const data=await r.json();
     if(!r.ok||!data.checkoutUrl) throw new Error(data.error||'No se pudo iniciar Mercado Pago.');
     currentCheckoutToken=data.token;
