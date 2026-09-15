@@ -1,0 +1,102 @@
+ANNA — CLOUDFLARE PAGES + WORKER + MERCADO PAGO
+=================================================
+
+IMPORTANTE
+---------
+NO subas la carpeta ARCHIVO_PRIVADO_R2 dentro de Pages.
+La guía tiene que permanecer privada en R2.
+
+La carpeta que se publica como sitio es:
+  PAGINA_PARA_CLOUDFLARE
+
+El archivo privado que se sube a R2 es:
+  ARCHIVO_PRIVADO_R2/guia-neurociencia.docx
+
+NOMBRES DE BINDINGS QUE USA EL CÓDIGO
+--------------------------------------
+D1 database binding: DB
+R2 bucket binding:    GUIDES
+Secret:               MP_ACCESS_TOKEN
+
+PASO 1 — CREAR PAGES
+--------------------
+1. Cloudflare Dashboard > Workers & Pages > Create > Pages.
+2. Puedes usar Direct Upload.
+3. Para este proyecto se incluye _worker.js, que contiene el backend.
+4. Extrae este ZIP y sube SOLO la carpeta PAGINA_PARA_CLOUDFLARE al proyecto Pages.
+
+PASO 2 — CREAR D1
+-----------------
+1. Workers & Pages > D1 SQL Database > Create database.
+2. Nombre sugerido: anna-ventas
+3. Abre la base > Console.
+4. Copia y ejecuta todo el contenido de schema.sql.
+5. En tu proyecto Pages: Settings > Bindings > Add > D1 database.
+6. Variable name: DB
+7. Selecciona anna-ventas.
+8. Guarda y vuelve a desplegar.
+
+PASO 3 — CREAR R2
+-----------------
+1. R2 Object Storage > Create bucket.
+2. Nombre sugerido: anna-guias
+3. NO habilites acceso público al bucket.
+4. Sube el archivo ARCHIVO_PRIVADO_R2/guia-neurociencia.docx
+   con el nombre EXACTO: guia-neurociencia.docx
+5. En Pages > Settings > Bindings > Add > R2 bucket.
+6. Variable name: GUIDES
+7. Selecciona anna-guias.
+8. Guarda y vuelve a desplegar.
+
+PASO 4 — ACCESS TOKEN DE MERCADO PAGO
+-------------------------------------
+El token que pusiste en Netlify NO se copia automáticamente.
+En Cloudflare Pages:
+1. Settings > Variables and Secrets.
+2. Add.
+3. Nombre EXACTO: MP_ACCESS_TOKEN
+4. Pega tu Access Token de PRODUCCIÓN como secreto.
+5. Guarda y vuelve a desplegar.
+
+NUNCA pongas el Access Token dentro de index.html ni dentro de _worker.js.
+
+PASO 5 — WEBHOOK DE MERCADO PAGO
+--------------------------------
+El checkout ya envía automáticamente notification_url a:
+  https://TU-DOMINIO/api/mp-webhook
+
+Si Mercado Pago te pide configurar una URL de Webhooks manualmente,
+usa esa misma URL y selecciona el evento Pagos/Payments.
+
+PASO 6 — PRUEBA
+---------------
+1. Abre la web publicada.
+2. Pulsa Comprar.
+3. Debe abrir un Checkout Pro creado para esa compra por ARS 2.000.
+4. Al aprobarse y acreditarse el pago, Mercado Pago vuelve a la web.
+5. El Worker consulta directamente la API de Mercado Pago.
+6. Si el pago coincide en referencia, monto, moneda y estado approved/accredited,
+   se genera la URL de descarga.
+7. La primera descarga marca la compra como utilizada mediante D1.
+8. Una segunda descarga devuelve HTTP 410 y no entrega el archivo.
+
+RUTAS DEL BACKEND
+-----------------
+POST /api/create-checkout
+GET  /api/payment-status
+POST /api/mp-webhook
+GET  /api/download
+
+SEGURIDAD
+---------
+- La guía NO está en los archivos públicos de Pages.
+- El Access Token solo está en Cloudflare Secrets.
+- La descarga valida nuevamente el pago contra Mercado Pago.
+- D1 hace un UPDATE condicional used=0 -> used=1 para reservar una sola descarga.
+- R2 se mantiene privado.
+
+NOTA SOBRE "UNA ÚNICA DESCARGA"
+--------------------------------
+El sistema limita a una sola solicitud de descarga exitosa desde tu sitio.
+Ningún sistema web puede impedir que una persona copie o comparta el archivo
+después de haberlo descargado en su dispositivo.
