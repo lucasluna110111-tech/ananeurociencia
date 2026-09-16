@@ -43,10 +43,6 @@ button.btn{cursor:pointer;font-family:inherit}
 .sobre-mi{display:flex;gap:44px;align-items:center}
 .sobre-mi-photo{width:220px;height:220px;min-width:220px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
 .sobre-mi p{color:var(--silver);line-height:1.6}
-.pay-row{display:flex;align-items:center;gap:12px;border:1px solid #2a2a2a;padding:12px 14px;margin:10px 0;background:#070707}
-.pay-row span{width:70px;color:var(--silver);text-transform:uppercase;font-size:11px;letter-spacing:.08em}
-.pay-row code{flex:1;color:var(--gold);font-size:15px;word-break:break-all}
-.pay-row button{padding:8px 14px;font-size:11px;margin:0}
 .pay-note{color:var(--silver);font-size:13px;line-height:1.5}
 @media(max-width:700px){.sobre-mi{flex-direction:column;text-align:center}}
 
@@ -202,8 +198,6 @@ button:disabled{opacity:.55;cursor:not-allowed}
 <h3 id="payModalTitle">Comprar material</h3>
 <p id="payModalProduct" style="color:var(--silver)"></p>
 <p class="pay-note">Serás enviado a Mercado Pago para completar el pago de forma segura.</p>
-<div class="pay-row"><span>Vendedor</span><code>Lucas Emanuel Luna Atienza</code></div>
-<div class="pay-row"><span>Alias</span><code>lucasmp2018</code></div>
 <button class="btn gold" id="mercadoPagoButton" type="button" onclick="startCheckout()">Pagar con Mercado Pago</button>
 <p class="pay-note" id="payStatus">El archivo se habilita únicamente después de que Mercado Pago confirme el pago.</p>
 </div></div>
@@ -235,6 +229,7 @@ function closePay(){document.getElementById('payModal').classList.remove('open')
 async function startCheckout(){
   const button=document.getElementById('mercadoPagoButton');
   const status=document.getElementById('payStatus');
+
   button.disabled=true;
   status.textContent='Creando tu compra segura…';
 
