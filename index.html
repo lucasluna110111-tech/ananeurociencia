@@ -76,13 +76,15 @@ button:disabled{opacity:.55;cursor:not-allowed}
 
 <section id="recursos"><div class="wrap"><h2 style="font:42px Georgia,serif;text-align:center">Recursos destacados</h2><div class="products">
 
+<!-- GUÍA DE NEUROCIENCIA DESHABILITADA -->
 <div class="product">
 <div class="cover">Guía Completa de Neurociencia Aplicada, Neuroplasticidad y Aprendizaje</div>
 <p>Material digital educativo</p>
 <div class="price">$3.000 ARS</div>
-<button class="btn gold" onclick="showPay('guia-neurociencia','Guía Completa de Neurociencia Aplicada, Neuroplasticidad y Aprendizaje','$3.000 ARS')">Comprar</button>
+<button class="btn" type="button" disabled>Próximamente</button>
 </div>
 
+<!-- GUÍA DE MEMORIA DISPONIBLE -->
 <div class="product">
 <div class="cover">Guía: La Memoria</div>
 <p>PDF educativo</p>
@@ -90,6 +92,7 @@ button:disabled{opacity:.55;cursor:not-allowed}
 <button class="btn gold" onclick="showPay('guia-memoria','Guía de Memoria','$3.000 ARS')">Comprar</button>
 </div>
 
+<!-- PACK DESHABILITADO -->
 <div class="product">
 <div class="cover">Pack Neuro + Psico</div>
 <p>Colección digital</p>
@@ -118,233 +121,380 @@ button:disabled{opacity:.55;cursor:not-allowed}
 </div>
 </div></section>
 
-<footer><div class="wrap"><div style="font:28px Georgia,serif;color:var(--gold)">Ana Elizondo</div><p>Neurociencia · Psicología · Mente</p><div class="social-footer"><a href="https://www.instagram.com/anna.elizondo_/" rel="noopener" target="_blank">Instagram · @anna.elizondo_</a><a href="https://www.tiktok.com/@annaelizkaa" rel="noopener" target="_blank">TikTok · @annaelizkaa</a></div><p>© 2025 Todos los derechos reservados.</p></div></footer>
+<footer><div class="wrap"><div style="font:28px Georgia,serif;color:var(--gold)">Ana Elizondo</div><p>Neurociencia · Psicología · Mente</p><div class="social-footer"><a href="https://www.instagram.com/anna.elizondo_/" rel="noopener" target="_blank">Instagram · @anna.elizondo_</a><a href="https://www.tiktok.com/@annaelizkaa" rel="noopener" target="_blank">TikTok · @annaelizkaa</a></div><p>© 2025 Todos los derechos reservados.</p></div></footer> 
+ 
+<div aria-labelledby="modalTitle" aria-modal="true" class="modal" id="infoModal" role="dialog"> 
+<div class="modal-box"><button aria-label="Cerrar" class="close" onclick="closeInfo()">×</button><h3 id="modalTitle"></h3><div id="modalText"></div></div> 
+</div> 
+ 
+<template id="dopaminaText"> 
+<p>Hay una cosa que quiero aclarar porque siento que en redes se habla muchísimo de dopamina, pero muchas veces se explica de una manera demasiado simplificada.</p> 
+<p>La típica frase es: “la dopamina es la hormona de la felicidad”.</p> 
+<p>Y no.</p> 
+<p>Primero, porque la dopamina ni siquiera es una hormona en el sentido en que normalmente usamos esa palabra. Es principalmente un neurotransmisor, una sustancia que utilizan determinadas neuronas para comunicarse y modular la actividad de distintos circuitos cerebrales.</p> 
+<p>Y segundo, porque reducirla a “placer” es quedarse con una parte muy pequeña de todo lo que realmente hace.</p> 
+<p>Yo prefiero entender la dopamina como parte de un sistema que participa en la motivación, el aprendizaje, la anticipación de recompensas y la selección de conductas.</p> 
+<p>Y esto cambia bastante la forma en la que entendemos nuestro comportamiento.</p> 
+<p>Porque la dopamina no aparece simplemente cuando algo me hace feliz.</p> 
+<p>Una de las cosas más interesantes que descubrimos gracias a la investigación de Wolfram Schultz y otros científicos es que determinadas neuronas dopaminérgicas pueden responder ante una recompensa inesperada y, después del aprendizaje, responder ante las señales que predicen esa recompensa.</p> 
+<p>Esto está relacionado con algo llamado error de predicción de recompensa.</p> 
+<p>Básicamente, mi cerebro está constantemente haciendo predicciones sobre lo que va a suceder.</p> 
+<p>Si ocurre algo mejor de lo que esperaba, existe una diferencia entre la predicción y el resultado.</p> 
+<p>Si ocurre exactamente lo que esperaba, esa diferencia cambia.</p> 
+<p>Y si ocurre algo peor de lo esperado, también existe información que puede modificar lo que voy a esperar la próxima vez.</p> 
+<p>Por eso la dopamina tiene muchísimo que ver con aprender de lo que sucede.</p> 
+<p>Y esto me parece mucho más interesante que decir simplemente “esto te da dopamina”.</p> 
+<p>Porque cuando alguien dice “Instagram te da dopamina”, “el celular te da dopamina” o “comer chocolate te da dopamina”, parece que nuestro cerebro fuera un vaso que se va llenando cada vez que hacemos algo agradable.</p> 
+<p>Y no funciona así.</p> 
+<p>La dopamina no es una especie de combustible de placer que se acumula dentro de nosotros.</p> 
+<p>Lo que existe son sistemas neuronales muchísimo más complejos, donde la dopamina participa en diferentes procesos dependiendo del circuito, el contexto y el comportamiento.</p> 
+<p>Y acá entra una diferencia que para mí es fundamental:</p> 
+<p>Placer y motivación no son exactamente lo mismo.</p> 
+<p>Puedo querer muchísimo conseguir algo y después descubrir que, cuando finalmente lo tengo, ni siquiera lo disfruto tanto.</p> 
+<p>Esto es importante porque muchas conductas humanas no se mantienen únicamente porque nos hagan sentir bien.</p> 
+<p>También pueden mantenerse porque nuestro cerebro aprendió que determinada conducta puede llevarnos a algo relevante.</p> 
+<p>Por ejemplo, agarrar el celular.</p> 
+<p>No necesariamente lo agarramos porque cada vez que lo hacemos sentimos una felicidad enorme.</p> 
+<p>Muchas veces lo hacemos porque aprendimos que desbloquearlo puede llevarnos a encontrar algo nuevo.</p> 
+<p>Un mensaje.</p> 
+<p>Una notificación.</p> 
+<p>Un video interesante.</p> 
+<p>Una interacción.</p> 
+<p>Algo inesperado.</p> 
+<p>Y esa posibilidad de encontrar algo puede mantener la conducta de búsqueda.</p> 
+<p>Esto es especialmente interesante cuando hablamos de redes sociales porque muchas plataformas están diseñadas alrededor de novedad, recompensa, anticipación y retroalimentación inmediata.</p> 
+<p>Pero tampoco quiero caer en la típica explicación exagerada de que “TikTok destruye tu dopamina” o que las redes secuestran tu cerebro como si literalmente nos estuvieran vaciando una sustancia química.</p> 
+<p>Eso no es una explicación científica suficientemente buena.</p> 
+<p>Lo interesante es entender que nuestro cerebro tiene sistemas de aprendizaje y motivación que pueden ser influenciados por el entorno.</p> 
+<p>Y cuanto más entendemos esos mecanismos, más fácil resulta entender por qué algunas conductas se vuelven tan automáticas.</p> 
+<p>Por eso para mí estudiar dopamina no sirve solamente para aprender neurociencia y poder decir palabras complicadas.</p> 
+<p>Sirve para entendernos a nosotros mismos.</p> 
+<p>Sirve para comprender por qué a veces sabemos perfectamente que deberíamos estudiar, entrenar o terminar algo importante, pero aun así sentimos una enorme atracción por una recompensa inmediata.</p> 
+<p>También sirve para entender por qué la anticipación puede ser tan poderosa.</p> 
+<p>Por qué a veces estamos más obsesionados con esperar un mensaje que con el mensaje en sí.</p> 
+<p>Por qué una notificación puede interrumpir lo que estamos haciendo.</p> 
+<p>Por qué podemos entrar a una aplicación durante cinco minutos y terminar quedándonos muchísimo más tiempo.</p> 
+<p>Y también sirve para dejar de culparnos por absolutamente todo.</p> 
+<p>Porque decir “soy una persona sin disciplina” es una explicación demasiado pobre para una conducta humana compleja.</p> 
+<p>Nuestra conducta está influida por aprendizaje, hábitos, contexto, recompensas, expectativas, emociones y sistemas cerebrales.</p> 
+<p>Eso no significa que no tengamos capacidad de decisión.</p> 
+<p>Significa que entender los mecanismos que influyen sobre nosotros puede ayudarnos a tomar mejores decisiones.</p> 
+<p>Y acá es donde yo creo que la psicología y la neurociencia se vuelven realmente útiles.</p> 
+<p>Porque conocer cómo funciona el cerebro no debería servir solamente para memorizar nombres de estructuras.</p> 
+<p>Debería servir para observar nuestra propia conducta con un poco más de inteligencia.</p> 
+<p>Si entiendo que mi cerebro aprende asociaciones entre señales, conductas y resultados, puedo empezar a modificar mi entorno.</p> 
+<p>Puedo hacer que determinadas conductas sean más fáciles de repetir y otras más difíciles.</p> 
+<p>Puedo dejar de depender constantemente de recompensas inmediatas.</p> 
+<p>Puedo entender por qué la gratificación instantánea puede competir con objetivos que tienen una recompensa mucho más lejana.</p> 
+<p>Y puedo empezar a construir hábitos pensando no solamente en “tener fuerza de voluntad”, sino también en cómo está diseñado mi entorno.</p> 
+<p>Por eso me interesa tanto hablar de dopamina.</p> 
+<p>No porque sea una palabra de moda.</p> 
+<p>Sino porque detrás de esa palabra hay una explicación bastante profunda de cómo aprendemos, qué perseguimos y por qué repetimos determinadas conductas.</p> 
+<p>Y después de entender todo esto, hay algo que personalmente me parece bastante más interesante que decir que la dopamina es la sustancia de la felicidad:</p> 
+<p>No se trata solamente de qué cosas me hacen sentir bien; también se trata de qué cosas mi cerebro está aprendiendo a perseguir.</p> 
+<p>Y entender esa diferencia puede cambiar bastante la manera en la que veo mis propios hábitos.</p> 
+</template> 
+ 
+<!-- MODAL DE COMPRA -->
+<div aria-labelledby="payModalTitle" aria-modal="true" class="modal" id="payModal" role="dialog"> 
+<div class="modal-box"> 
+<button aria-label="Cerrar" class="close" onclick="closePay()">×</button> 
 
-<div aria-labelledby="modalTitle" aria-modal="true" class="modal" id="infoModal" role="dialog">
-<div class="modal-box"><button aria-label="Cerrar" class="close" onclick="closeInfo()">×</button><h3 id="modalTitle"></h3><div id="modalText"></div></div>
+<h3 id="payModalTitle">Comprar material</h3> 
+
+<p id="payModalProduct" style="color:var(--silver)"></p> 
+
+<div style="border-left:2px solid var(--gold);padding:4px 0 4px 18px;margin:22px 0">
+
+<p style="font:400 24px Georgia,serif;color:var(--gold);margin:0 0 10px">
+Invertí en tu conocimiento.
+</p>
+
+<p style="color:var(--silver);line-height:1.6;margin:0 0 10px">
+Comprender cómo funciona tu memoria puede cambiar la forma en que aprendés, estudiás y recordás.
+</p>
+
+<p style="color:var(--silver);line-height:1.6;margin:0">
+<strong style="color:var(--text)">Tu aprendizaje empieza con una decisión.</strong>
+</p>
+
 </div>
 
-<template id="dopaminaText">
-<p>Hay una cosa que quiero aclarar porque siento que en redes se habla muchísimo de dopamina, pero muchas veces se explica de una manera demasiado simplificada.</p>
-<p>La típica frase es: “la dopamina es la hormona de la felicidad”.</p>
-<p>Y no.</p>
-<p>Primero, porque la dopamina ni siquiera es una hormona en el sentido en que normalmente usamos esa palabra. Es principalmente un neurotransmisor, una sustancia que utilizan determinadas neuronas para comunicarse y modular la actividad de distintos circuitos cerebrales.</p>
-<p>Y segundo, porque reducirla a “placer” es quedarse con una parte muy pequeña de todo lo que realmente hace.</p>
-<p>Yo prefiero entender la dopamina como parte de un sistema que participa en la motivación, el aprendizaje, la anticipación de recompensas y la selección de conductas.</p>
-<p>Y esto cambia bastante la forma en la que entendemos nuestro comportamiento.</p>
-<p>Porque la dopamina no aparece simplemente cuando algo me hace feliz.</p>
-<p>Una de las cosas más interesantes que descubrimos gracias a la investigación de Wolfram Schultz y otros científicos es que determinadas neuronas dopaminérgicas pueden responder ante una recompensa inesperada y, después del aprendizaje, responder ante las señales que predicen esa recompensa.</p>
-<p>Esto está relacionado con algo llamado error de predicción de recompensa.</p>
-<p>Básicamente, mi cerebro está constantemente haciendo predicciones sobre lo que va a suceder.</p>
-<p>Si ocurre algo mejor de lo que esperaba, existe una diferencia entre la predicción y el resultado.</p>
-<p>Si ocurre exactamente lo que esperaba, esa diferencia cambia.</p>
-<p>Y si ocurre algo peor de lo esperado, también existe información que puede modificar lo que voy a esperar la próxima vez.</p>
-<p>Por eso la dopamina tiene muchísimo que ver con aprender de lo que sucede.</p>
-<p>Y esto me parece mucho más interesante que decir simplemente “esto te da dopamina”.</p>
-<p>Porque cuando alguien dice “Instagram te da dopamina”, “el celular te da dopamina” o “comer chocolate te da dopamina”, parece que nuestro cerebro fuera un vaso que se va llenando cada vez que hacemos algo agradable.</p>
-<p>Y no funciona así.</p>
-<p>La dopamina no es una especie de combustible de placer que se acumula dentro de nosotros.</p>
-<p>Lo que existe son sistemas neuronales muchísimo más complejos, donde la dopamina participa en diferentes procesos dependiendo del circuito, el contexto y el comportamiento.</p>
-<p>Y acá entra una diferencia que para mí es fundamental:</p>
-<p>Placer y motivación no son exactamente lo mismo.</p>
-<p>Puedo querer muchísimo conseguir algo y después descubrir que, cuando finalmente lo tengo, ni siquiera lo disfruto tanto.</p>
-<p>Esto es importante porque muchas conductas humanas no se mantienen únicamente porque nos hagan sentir bien.</p>
-<p>También pueden mantenerse porque nuestro cerebro aprendió que determinada conducta puede llevarnos a algo relevante.</p>
-<p>Por ejemplo, agarrar el celular.</p>
-<p>No necesariamente lo agarramos porque cada vez que lo hacemos sentimos una felicidad enorme.</p>
-<p>Muchas veces lo hacemos porque aprendimos que desbloquearlo puede llevarnos a encontrar algo nuevo.</p>
-<p>Un mensaje.</p>
-<p>Una notificación.</p>
-<p>Un video interesante.</p>
-<p>Una interacción.</p>
-<p>Algo inesperado.</p>
-<p>Y esa posibilidad de encontrar algo puede mantener la conducta de búsqueda.</p>
-<p>Esto es especialmente interesante cuando hablamos de redes sociales porque muchas plataformas están diseñadas alrededor de novedad, recompensa, anticipación y retroalimentación inmediata.</p>
-<p>Pero tampoco quiero caer en la típica explicación exagerada de que “TikTok destruye tu dopamina” o que las redes secuestran tu cerebro como si literalmente nos estuvieran vaciando una sustancia química.</p>
-<p>Eso no es una explicación científica suficientemente buena.</p>
-<p>Lo interesante es entender que nuestro cerebro tiene sistemas de aprendizaje y motivación que pueden ser influenciados por el entorno.</p>
-<p>Y cuanto más entendemos esos mecanismos, más fácil resulta entender por qué algunas conductas se vuelven tan automáticas.</p>
-<p>Por eso para mí estudiar dopamina no sirve solamente para aprender neurociencia y poder decir palabras complicadas.</p>
-<p>Sirve para entendernos a nosotros mismos.</p>
-<p>Sirve para comprender por qué a veces sabemos perfectamente que deberíamos estudiar, entrenar o terminar algo importante, pero aun así sentimos una enorme atracción por una recompensa inmediata.</p>
-<p>También sirve para entender por qué la anticipación puede ser tan poderosa.</p>
-<p>Por qué a veces estamos más obsesionados con esperar un mensaje que con el mensaje en sí.</p>
-<p>Por qué una notificación puede interrumpir lo que estamos haciendo.</p>
-<p>Por qué podemos entrar a una aplicación durante cinco minutos y terminar quedándonos muchísimo más tiempo.</p>
-<p>Y también sirve para dejar de culparnos por absolutamente todo.</p>
-<p>Porque decir “soy una persona sin disciplina” es una explicación demasiado pobre para una conducta humana compleja.</p>
-<p>Nuestra conducta está influida por aprendizaje, hábitos, contexto, recompensas, expectativas, emociones y sistemas cerebrales.</p>
-<p>Eso no significa que no tengamos capacidad de decisión.</p>
-<p>Significa que entender los mecanismos que influyen sobre nosotros puede ayudarnos a tomar mejores decisiones.</p>
-<p>Y acá es donde yo creo que la psicología y la neurociencia se vuelven realmente útiles.</p>
-<p>Porque conocer cómo funciona el cerebro no debería servir solamente para memorizar nombres de estructuras.</p>
-<p>Debería servir para observar nuestra propia conducta con un poco más de inteligencia.</p>
-<p>Si entiendo que mi cerebro aprende asociaciones entre señales, conductas y resultados, puedo empezar a modificar mi entorno.</p>
-<p>Puedo hacer que determinadas conductas sean más fáciles de repetir y otras más difíciles.</p>
-<p>Puedo dejar de depender constantemente de recompensas inmediatas.</p>
-<p>Puedo entender por qué la gratificación instantánea puede competir con objetivos que tienen una recompensa mucho más lejana.</p>
-<p>Y puedo empezar a construir hábitos pensando no solamente en “tener fuerza de voluntad”, sino también en cómo está diseñado mi entorno.</p>
-<p>Por eso me interesa tanto hablar de dopamina.</p>
-<p>No porque sea una palabra de moda.</p>
-<p>Sino porque detrás de esa palabra hay una explicación bastante profunda de cómo aprendemos, qué perseguimos y por qué repetimos determinadas conductas.</p>
-<p>Y después de entender todo esto, hay algo que personalmente me parece bastante más interesante que decir que la dopamina es la sustancia de la felicidad:</p>
-<p>No se trata solamente de qué cosas me hacen sentir bien; también se trata de qué cosas mi cerebro está aprendiendo a perseguir.</p>
-<p>Y entender esa diferencia puede cambiar bastante la manera en la que veo mis propios hábitos.</p>
-</template>
+<p class="pay-note">
+Serás enviado a Mercado Pago para completar el pago de forma segura.
+</p> 
 
-<div aria-labelledby="payModalTitle" aria-modal="true" class="modal" id="payModal" role="dialog">
-<div class="modal-box">
-<button aria-label="Cerrar" class="close" onclick="closePay()">×</button>
-<h3 id="payModalTitle">Comprar material</h3>
-<p id="payModalProduct" style="color:var(--silver)"></p>
-<p class="pay-note">Serás enviado a Mercado Pago para completar el pago de forma segura.</p>
-<button class="btn gold" id="mercadoPagoButton" type="button" onclick="startCheckout()">Pagar con Mercado Pago</button>
-<p class="pay-note" id="payStatus">El archivo se habilita únicamente después de que Mercado Pago confirme el pago.</p>
-</div></div>
+<button class="btn gold" id="mercadoPagoButton" type="button" onclick="startCheckout()">
+Pagar con Mercado Pago
+</button> 
 
-<template id="memoriaText"><p>Yo antes pensaba que tener buena memoria era simplemente acordarte de muchas cosas. Pero cuando empecé a estudiar cómo funciona el cerebro, entendí que es bastante más delirante que eso. La memoria no es una cámara que graba todo lo que vivimos. El cerebro selecciona, organiza, relaciona y reconstruye información. Por eso podemos olvidar algo que nos pasó ayer y, en cambio, acordarnos perfectamente de una boludez de hace cinco años. Y algo clave para recordar mejor, no alcanza con leer algo veinte veces. El cerebro aprende mucho mejor cuando tiene que recuperar activamente la información, relacionarla con conocimientos previos y volver a encontrarla después. Por eso estudiar cómo funciona la memoria no es solamente interesante: te puede servir literalmente para estudiar mejor, aprender más rápido y dejar de depender de repetir las cosas hasta el cansancio. Y si querés llevar esto al siguiente nivel, abajo te dejo mi guía paga, donde te enseño cómo funcionan los palacios mentales, técnicas de asociación y cómo entrenar tu memoria para empezar a usarla realmente a tu voluntad.</p></template>
+<p class="pay-note" id="payStatus">
+El archivo se habilita únicamente después de que Mercado Pago confirme el pago.
+</p> 
 
-<template id="psicologiaText"><p>Hay algo de la psicología que a mí particularmente me obsesiona: la parte de nosotros que no mostramos.</p><p>Porque todos tenemos una versión que enseñamos y otra que solamente aparece cuando nadie está mirando.</p><p>Y no, no hablo de “personalidades secretas” ni de esas frases de internet que parecen profundas. Hablo de algo mucho más interesante: mecanismos, patrones, impulsos, inseguridades, sesgos y formas de interpretar la realidad que muchas veces ni siquiera reconocemos en nosotros mismos.</p><p>Durante mucho tiempo me interesó observar a las personas. Cómo hablan, cómo cambian su comportamiento dependiendo de quién tienen enfrente, qué cosas repiten, qué intentan ocultar, qué les molesta, qué buscan demostrar y, sobre todo, qué hacen cuando creen que nadie está prestando atención.</p><p>Y probablemente muchas de las personas que me ven no tienen idea de cuánto las observo.</p><p>No porque esté intentando juzgarlas, sino porque para mí la conducta humana siempre fue algo fascinante.</p><p>Una conversación, una reacción, una forma de evitar un tema, una contradicción, una necesidad de aprobación o incluso una manera de relacionarse pueden decir muchísimo más de una persona de lo que parece.</p><p>Pero hay algo todavía más interesante: observar no alcanza.</p><p>Porque puedo mirar una conducta y equivocarme completamente sobre su significado.</p><p>Y ahí fue cuando empecé a interesarme cada vez más por estudiar psicología.</p><p>Porque la psicología me dio algo que simplemente observar personas no podía darme: conceptos para organizar lo que estaba viendo, teorías para cuestionar mis propias interpretaciones y evidencia para diferenciar una intuición de una explicación realmente fundamentada.</p><p>Y cuanto más estudio, más me doy cuenta de que la mente humana puede ser bastante contradictoria.</p><p>Podemos querer algo y sabotearnos cuando lo conseguimos.</p><p>Podemos defender una idea no porque sea cierta, sino porque forma parte de nuestra identidad.</p><p>Podemos recordar una situación con absoluta seguridad y aun así estar equivocados en algunos detalles.</p><p>Podemos justificar decisiones después de haberlas tomado y convencernos de que fueron completamente racionales.</p><p>Podemos interpretar las acciones de otra persona de acuerdo con nuestros propios miedos y después creer que estamos viendo la realidad objetivamente.</p><p>Y esta es, para mí, una de las partes más oscuras de la psicología: no siempre tenemos acceso transparente a las razones de nuestra propia conducta.</p><p>A veces creemos conocernos muchísimo y, sin embargo, solamente conocemos la historia que nos contamos sobre nosotros mismos.</p><p>Por eso aprender psicología no debería servir para convertirte en alguien que diagnostica a todo el mundo.</p><p>Debería servir para algo bastante más incómodo:</p><p>aprender a sospechar también de tu propia mente.</p><p>Porque es muy fácil estudiar psicología para encontrar explicaciones sobre los demás.</p><p>“Hace esto porque tiene inseguridad.”</p><p>“Se comporta así porque tiene tal apego.”</p><p>“Me trata así porque tiene miedo.”</p><p>Pero es muchísimo más difícil utilizar esos conocimientos para observar nuestros propios patrones.</p><p>Ahí es donde realmente empieza el autoconocimiento.</p><p>Y justamente por eso quise hacer esta guía.</p><p>Porque todo esto que fui aprendiendo no quería dejarlo solamente en apuntes, libros o cosas que leo por curiosidad. Quería transformarlo en algo que pudiera compartir de una manera que se entienda, pero sin sacrificar la parte interesante de la psicología.</p><p>En esta parte gratuita te dejo una introducción para que entiendas la lógica.</p><p>Pero abajo dejé la guía completa, donde me meto muchísimo más en la psicología de la conducta, sesgos cognitivos, mecanismos de defensa, manipulación, influencia social, autoestima, apego, percepción, personalidad, emociones y otros conceptos que te permiten mirar determinadas situaciones desde una perspectiva completamente diferente.</p><p>No la hice para darte un listado de “trucos psicológicos” para controlar personas.</p><p>La hice para que empieces a entender algo mucho más interesante:</p><p>cómo funciona la mente que tenés enfrente y cómo funciona la que llevás adentro.</p><p>Y probablemente esa segunda sea bastante más difícil de entender.</p></template>
+</div></div> 
+ 
+<template id="memoriaText">
+<p>Yo antes pensaba que tener buena memoria era simplemente acordarte de muchas cosas. Pero cuando empecé a estudiar cómo funciona el cerebro, entendí que es bastante más delirante que eso. La memoria no es una cámara que graba todo lo que vivimos. El cerebro selecciona, organiza, relaciona y reconstruye información. Por eso podemos olvidar algo que nos pasó ayer y, en cambio, acordarnos perfectamente de una boludez de hace cinco años. Y algo clave para recordar mejor, no alcanza con leer algo veinte veces. El cerebro aprende mucho mejor cuando tiene que recuperar activamente la información, relacionarla con conocimientos previos y volver a encontrarla después. Por eso estudiar cómo funciona la memoria no es solamente interesante: te puede servir literalmente para estudiar mejor, aprender más rápido y dejar de depender de repetir las cosas hasta el cansancio. Y si querés llevar esto al siguiente nivel, abajo te dejo mi guía paga, donde te enseño cómo funcionan los palacios mentales, técnicas de asociación y cómo entrenar tu memoria para empezar a usarla realmente a tu voluntad.</p>
+</template> 
+ 
+<template id="psicologiaText">
+<p>Hay algo de la psicología que a mí particularmente me obsesiona: la parte de nosotros que no mostramos.</p>
+<p>Porque todos tenemos una versión que enseñamos y otra que solamente aparece cuando nadie está mirando.</p>
+<p>Y no, no hablo de “personalidades secretas” ni de esas frases de internet que parecen profundas. Hablo de algo mucho más interesante: mecanismos, patrones, impulsos, inseguridades, sesgos y formas de interpretar la realidad que muchas veces ni siquiera reconocemos en nosotros mismos.</p>
+<p>Durante mucho tiempo me interesó observar a las personas. Cómo hablan, cómo cambian su comportamiento dependiendo de quién tienen enfrente, qué cosas repiten, qué intentan ocultar, qué les molesta, qué buscan demostrar y, sobre todo, qué hacen cuando creen que nadie está prestando atención.</p>
+<p>Y probablemente muchas de las personas que me ven no tienen idea de cuánto las observo.</p>
+<p>No porque esté intentando juzgarlas, sino porque para mí la conducta humana siempre fue algo fascinante.</p>
+<p>Una conversación, una reacción, una forma de evitar un tema, una contradicción, una necesidad de aprobación o incluso una manera de relacionarse pueden decir muchísimo más de una persona de lo que parece.</p>
+<p>Pero hay algo todavía más interesante: observar no alcanza.</p>
+<p>Porque puedo mirar una conducta y equivocarme completamente sobre su significado.</p>
+<p>Y ahí fue cuando empecé a interesarme cada vez más por estudiar psicología.</p>
+<p>Porque la psicología me dio algo que simplemente observar personas no podía darme: conceptos para organizar lo que estaba viendo, teorías para cuestionar mis propias interpretaciones y evidencia para diferenciar una intuición de una explicación realmente fundamentada.</p>
+<p>Y cuanto más estudio, más me doy cuenta de que la mente humana puede ser bastante contradictoria.</p>
+<p>Podemos querer algo y sabotearnos cuando lo conseguimos.</p>
+<p>Podemos defender una idea no porque sea cierta, sino porque forma parte de nuestra identidad.</p>
+<p>Podemos recordar una situación con absoluta seguridad y aun así estar equivocados en algunos detalles.</p>
+<p>Podemos justificar decisiones después de haberlas tomado y convencernos de que fueron completamente racionales.</p>
+<p>Podemos interpretar las acciones de otra persona de acuerdo con nuestros propios miedos y después creer que estamos viendo la realidad objetivamente.</p>
+<p>Y esta es, para mí, una de las partes más oscuras de la psicología: no siempre tenemos acceso transparente a las razones de nuestra propia conducta.</p>
+<p>A veces creemos conocernos muchísimo y, sin embargo, solamente conocemos la historia que nos contamos sobre nosotros mismos.</p>
+<p>Por eso aprender psicología no debería servir para convertirte en alguien que diagnostica a todo el mundo.</p>
+<p>Debería servir para algo bastante más incómodo:</p>
+<p>aprender a sospechar también de tu propia mente.</p>
+<p>Porque es muy fácil estudiar psicología para encontrar explicaciones sobre los demás.</p>
+<p>“Hace esto porque tiene inseguridad.”</p>
+<p>“Se comporta así porque tiene tal apego.”</p>
+<p>“Me trata así porque tiene miedo.”</p>
+<p>Pero es muchísimo más difícil utilizar esos conocimientos para observar nuestros propios patrones.</p>
+<p>Ahí es donde realmente empieza el autoconocimiento.</p>
+<p>Y justamente por eso quise hacer esta guía.</p>
+<p>Porque todo esto que fui aprendiendo no quería dejarlo solamente en apuntes, libros o cosas que leo por curiosidad. Quería transformarlo en algo que pudiera compartir de una manera que se entienda, pero sin sacrificar la parte interesante de la psicología.</p>
+<p>En esta parte gratuita te dejo una introducción para que entiendas la lógica.</p>
+<p>Pero abajo dejé la guía completa, donde me meto muchísimo más en la psicología de la conducta, sesgos cognitivos, mecanismos de defensa, manipulación, influencia social, autoestima, apego, percepción, personalidad, emociones y otros conceptos que te permiten mirar determinadas situaciones desde una perspectiva completamente diferente.</p>
+<p>No la hice para darte un listado de “trucos psicológicos” para controlar personas.</p>
+<p>La hice para que empieces a entender algo mucho más interesante:</p>
+<p>cómo funciona la mente que tenés enfrente y cómo funciona la que llevás adentro.</p>
+<p>Y probablemente esa segunda sea bastante más difícil de entender.</p>
+</template> 
+ 
+<script> 
 
-<script>
-function showInfo(t,x){document.getElementById('modalTitle').textContent=t;document.getElementById('modalText').innerHTML='<p>'+x+'</p>';document.querySelector('#infoModal .modal-box').scrollTop=0;document.getElementById('infoModal').classList.add('open')}
-function showDopamina(){document.getElementById('modalTitle').textContent='Dopamina';document.getElementById('modalText').innerHTML=document.getElementById('dopaminaText').innerHTML;document.querySelector('#infoModal .modal-box').scrollTop=0;document.getElementById('infoModal').classList.add('open')}
-function showMemoria(){document.getElementById('modalTitle').textContent='Memoria';document.getElementById('modalText').innerHTML=document.getElementById('memoriaText').innerHTML;document.querySelector('#infoModal .modal-box').scrollTop=0;document.getElementById('infoModal').classList.add('open')}
-function showPsicologia(){document.getElementById('modalTitle').textContent='Psicología';document.getElementById('modalText').innerHTML=document.getElementById('psicologiaText').innerHTML;document.querySelector('#infoModal .modal-box').scrollTop=0;document.getElementById('infoModal').classList.add('open')}
-function closeInfo(){document.getElementById('infoModal').classList.remove('open')}
+function showInfo(t,x){
+  document.getElementById('modalTitle').textContent=t;
+  document.getElementById('modalText').innerHTML='<p>'+x+'</p>';
+  document.querySelector('#infoModal .modal-box').scrollTop=0;
+  document.getElementById('infoModal').classList.add('open')
+} 
 
-let currentProduct=null;
-let currentCheckoutToken=null;
+function showDopamina(){
+  document.getElementById('modalTitle').textContent='Dopamina';
+  document.getElementById('modalText').innerHTML=document.getElementById('dopaminaText').innerHTML;
+  document.querySelector('#infoModal .modal-box').scrollTop=0;
+  document.getElementById('infoModal').classList.add('open')
+} 
 
-function showPay(productKey,n,p){
-  currentProduct=productKey;
-  document.getElementById('payModalProduct').textContent=n+' — '+p;
-  document.getElementById('payStatus').textContent='El archivo se habilita únicamente después de que Mercado Pago confirme el pago.';
-  document.getElementById('mercadoPagoButton').disabled=false;
-  document.getElementById('payModal').classList.add('open');
-}
+function showMemoria(){
+  document.getElementById('modalTitle').textContent='Memoria';
+  document.getElementById('modalText').innerHTML=document.getElementById('memoriaText').innerHTML;
+  document.querySelector('#infoModal .modal-box').scrollTop=0;
+  document.getElementById('infoModal').classList.add('open')
+} 
 
-function closePay(){document.getElementById('payModal').classList.remove('open')}
+function showPsicologia(){
+  document.getElementById('modalTitle').textContent='Psicología';
+  document.getElementById('modalText').innerHTML=document.getElementById('psicologiaText').innerHTML;
+  document.querySelector('#infoModal .modal-box').scrollTop=0;
+  document.getElementById('infoModal').classList.add('open')
+} 
 
-async function startCheckout(){
-  const button=document.getElementById('mercadoPagoButton');
-  const status=document.getElementById('payStatus');
+function closeInfo(){
+  document.getElementById('infoModal').classList.remove('open')
+} 
+ 
+let currentProduct=null; 
+let currentCheckoutToken=null; 
+ 
+function showPay(productKey,n,p){ 
+  currentProduct=productKey; 
 
-  button.disabled=true;
-  status.textContent='Creando tu compra segura…';
+  document.getElementById('payModalProduct').textContent=n+' — '+p; 
 
-  try{
-    const r=await fetch('/api/create-checkout',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({product:currentProduct})
-    });
+  document.getElementById('payStatus').textContent='El archivo se habilita únicamente después de que Mercado Pago confirme el pago.'; 
 
-    const data=await r.json();
+  document.getElementById('mercadoPagoButton').disabled=false; 
 
-    if(!r.ok||!data.checkoutUrl)
-      throw new Error(data.error||'No se pudo iniciar Mercado Pago.');
+  document.getElementById('payModal').classList.add('open'); 
+} 
+ 
+function closePay(){
+  document.getElementById('payModal').classList.remove('open')
+} 
+ 
+async function startCheckout(){ 
 
-    currentCheckoutToken=data.token;
-    window.location.href=data.checkoutUrl;
+  const button=document.getElementById('mercadoPagoButton'); 
+  const status=document.getElementById('payStatus'); 
+ 
+  button.disabled=true; 
+  status.textContent='Creando tu compra segura…'; 
+ 
+  try{ 
 
-  }catch(e){
-    status.textContent=e.message||'No se pudo iniciar el pago.';
-    button.disabled=false;
-  }
-}
+    const r=await fetch('/api/create-checkout',{ 
+      method:'POST', 
+      headers:{'Content-Type':'application/json'}, 
+      body:JSON.stringify({product:currentProduct}) 
+    }); 
+ 
+    const data=await r.json(); 
+ 
+    if(!r.ok||!data.checkoutUrl) 
+      throw new Error(data.error||'No se pudo iniciar Mercado Pago.'); 
+ 
+    currentCheckoutToken=data.token; 
 
-async function verifyReturnedPayment(){
-  const params=new URLSearchParams(location.search);
-  const paymentId=params.get('payment_id');
-  const reference=params.get('external_reference');
-  const result=params.get('payment');
+    window.location.href=data.checkoutUrl; 
+ 
+  }catch(e){ 
 
-  if(!paymentId||!reference) return;
+    status.textContent=e.message||'No se pudo iniciar el pago.'; 
+    button.disabled=false; 
 
-  document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open'));
+  } 
+} 
+ 
+async function verifyReturnedPayment(){ 
 
-  const box=document.createElement('div');
-  box.className='payment-result';
+  const params=new URLSearchParams(location.search); 
 
-  box.innerHTML='<div class="payment-result-box"><div class="payment-spinner"></div><h2>Verificando tu pago</h2><p>Estamos consultando directamente a Mercado Pago. No cierres esta página.</p><p id="paymentResultText">Comprobando estado…</p></div>';
+  const paymentId=params.get('payment_id'); 
+  const reference=params.get('external_reference'); 
+  const result=params.get('payment'); 
+ 
+  if(!paymentId||!reference) return; 
+ 
+  document.querySelectorAll('.modal').forEach(m=>m.classList.remove('open')); 
+ 
+  const box=document.createElement('div'); 
+  box.className='payment-result'; 
+ 
+  box.innerHTML='<div class="payment-result-box"><div class="payment-spinner"></div><h2>Verificando tu pago</h2><p>Estamos consultando directamente a Mercado Pago. No cierres esta página.</p><p id="paymentResultText">Comprobando estado…</p></div>'; 
+ 
+  document.body.appendChild(box); 
+ 
+  let attempts=0; 
+ 
+  const check=async()=>{ 
 
-  document.body.appendChild(box);
+    attempts++; 
+ 
+    try{ 
 
-  let attempts=0;
+      const r=await fetch( 
+        '/api/payment-status?token='+ 
+        encodeURIComponent(reference)+ 
+        '&payment_id='+ 
+        encodeURIComponent(paymentId), 
+        {cache:'no-store'} 
+      ); 
+ 
+      const data=await r.json(); 
+      const text=document.getElementById('paymentResultText'); 
+ 
+      /* PAGO APROBADO */
+      if(data.status==='approved'&&data.downloadUrl){ 
 
-  const check=async()=>{
-    attempts++;
+        document.querySelector('.payment-result-box').innerHTML=`
+          <div style="font-size:42px;margin-bottom:8px">✓</div>
 
-    try{
-      const r=await fetch(
-        '/api/payment-status?token='+
-        encodeURIComponent(reference)+
-        '&payment_id='+
-        encodeURIComponent(paymentId),
-        {cache:'no-store'}
-      );
+          <h2 style="font:400 34px Georgia,serif;color:var(--gold);margin:10px 0 18px">
+            ¡Gracias por tu compra!
+          </h2>
 
-      const data=await r.json();
-      const text=document.getElementById('paymentResultText');
+          <p style="color:var(--silver);line-height:1.6;margin:0 0 10px">
+            Tu pago fue confirmado correctamente.
+          </p>
 
-      if(data.status==='approved'&&data.downloadUrl){
+          <p style="color:var(--silver);line-height:1.6;margin:0 0 18px">
+            Tu material está listo.
+          </p>
 
-        text.textContent='¡Gracias por tu compra! Tu pago fue confirmado correctamente. Tu material está listo. Aquí y ahora.';
+          <p style="font:400 26px Georgia,serif;color:var(--gold);margin:0 0 28px">
+            Aquí y ahora.
+          </p>
 
-        setTimeout(()=>{
-          window.location.href=data.downloadUrl
-        },700);
+          <a
+            href="${data.downloadUrl}"
+            class="btn gold"
+            style="display:inline-block;margin:0"
+          >
+            Descargar mi guía
+          </a>
+        `;
 
-        return;
-      }
+        return; 
+      } 
+ 
+      /* ENLACE YA UTILIZADO */
+      if(data.status==='used'){ 
 
-      if(data.status==='used'){
-        text.textContent='Este enlace ya fue utilizado.';
-        return;
-      }
+        document.querySelector('.payment-result-box').innerHTML=`
+          <h2>Enlace utilizado</h2>
+          <p>Este enlace de descarga ya fue utilizado.</p>
+        `;
 
-      if(data.status==='rejected'||data.status==='cancelled'){
-        text.textContent='El pago no fue aprobado. No se entregará el archivo.';
-        return;
-      }
+        return; 
+      } 
+ 
+      /* PAGO RECHAZADO O CANCELADO */
+      if(data.status==='rejected'||data.status==='cancelled'){ 
 
-      text.textContent='El pago todavía está siendo procesado. Volveremos a comprobarlo automáticamente…';
+        document.querySelector('.payment-result-box').innerHTML=`
+          <h2>Pago no aprobado</h2>
+          <p>El pago no fue aprobado. No se entregará el archivo.</p>
+        `;
 
-      if(attempts<30)
-        setTimeout(check,3000);
-      else
-        text.textContent='La confirmación está tardando más de lo habitual. Conservá esta página y volvé a intentar en unos minutos.';
+        return; 
+      } 
+ 
+      /* PAGO PENDIENTE */
+      text.textContent='El pago todavía está siendo procesado. Volveremos a comprobarlo automáticamente…'; 
+ 
+      if(attempts<30) 
+        setTimeout(check,3000); 
+      else 
+        text.textContent='La confirmación está tardando más de lo habitual. Conservá esta página y volvé a intentar en unos minutos.'; 
+ 
+    }catch(e){ 
 
-    }catch(e){
+      if(attempts<30) 
+        setTimeout(check,3000); 
+      else 
+        document.getElementById('paymentResultText').textContent='No pudimos verificar el pago en este momento. Intentá nuevamente más tarde.'; 
 
-      if(attempts<30)
-        setTimeout(check,3000);
-      else
-        document.getElementById('paymentResultText').textContent='No pudimos verificar el pago en este momento. Intentá nuevamente más tarde.';
+    } 
+  }; 
+ 
+  check(); 
+} 
+ 
+document.getElementById('infoModal').addEventListener('click',function(e){ 
+  if(e.target===this)closeInfo() 
+}) 
+ 
+document.getElementById('payModal').addEventListener('click',function(e){ 
+  if(e.target===this)closePay() 
+}) 
+ 
+document.addEventListener('keydown',function(e){ 
+  if(e.key==='Escape'){ 
+    closeInfo(); 
+    closePay(); 
+  } 
+}) 
+ 
+window.addEventListener('DOMContentLoaded',verifyReturnedPayment); 
 
-    }
-  };
-
-  check();
-}
-
-document.getElementById('infoModal').addEventListener('click',function(e){
-  if(e.target===this)closeInfo()
-})
-
-document.getElementById('payModal').addEventListener('click',function(e){
-  if(e.target===this)closePay()
-})
-
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){
-    closeInfo();
-    closePay();
-  }
-})
-
-window.addEventListener('DOMContentLoaded',verifyReturnedPayment);
-</script>
-
+</script> 
+ 
 </body></html>
